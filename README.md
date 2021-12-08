@@ -12,3 +12,5 @@ https://Besupan.github.io/run-buddy/
 
 ## Contribution
 Made with hands by Brett Dickson
+
+###  ©️2019 Run Buddy, Inc
