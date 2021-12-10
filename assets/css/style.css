@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
     --color1: #39a6b2;
     --color2: #fce138;
     --color3: #024e76;
@@ -20,6 +23,7 @@ header {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    z-index: 9999;
 }
 
 header h1{
@@ -175,6 +179,68 @@ footer a {
 
   .hero-form button:hover {
       background-color: var(--color1)
+  }
+
+  .checkbox-wrapper input,
+  .radio-wrapper input {
+      opacity: 0;
+  }
+
+  .checkbox-wrapper label,
+  .radio-wrapper label {
+      position: relative;
+      left: 10px;
+      margin: 10px;
+      line-height: 1.6;
+  }
+
+  .checkbox-wrapper label::before,
+  .radio-wrapper label::before {
+      content: "";
+      height: 20px;
+      width: 20px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--color3);
+      position: absolute;
+      top: -4px;
+      left: -30px;
+  }
+
+  .radio-wrapper label::before {
+      border-radius: 50%;
+  }
+
+  .radio-wrapper label::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color3);
+      position: absolute;
+      left: -29px;
+      top: -3px;
+      background-image: radial-gradient(circle, var(--color1), var(--color3))
+  }
+
+  .checkbox-wrapper label::after {
+      content: "";
+      height: 6px;
+      width: 14px;
+      border-left: 2px solid var(--color3);
+      border-bottom: 2px solid var(--color3);
+      position: absolute;
+      left: -27px;
+      top: 1px;
+      transform: rotate(-50deg);
+  }
+
+  .checkbox-wrapper input + label::after, 
+  .radio-wrapper input + label::after {
+    content: none;
+  }
+  .checkbox-wrapper input:checked + label::after, 
+  .radio-wrapper input:checked + label::after {
+      content: "";
   }
   /* Hero Style End */
 
